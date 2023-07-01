@@ -1,0 +1,45 @@
+<div *ngIf="!loading && !updateValue">
+  <div class="card">
+    <img
+      src="{{ compound.strImageSource }}"
+      alt="Compound Image"
+      style="width: 20%; height: 20%"
+    />
+    <div class="container">
+      <h4>
+        <b>{{ compound.CompoundName }}</b>
+      </h4>
+      <p class="description">{{ compound.CompoundDescription }}</p>
+    </div>
+    <button class="button" (click)="update()">update</button>
+  </div>
+</div>
+<div *ngIf="updateValue">
+  <div class="card">
+    <div class="container">
+      <p>
+        <label>Compound Name</label>
+        <input
+          type="text"
+          value="{{ compound.CompoundName }}"
+          id="name"
+          placeholder="{{ compound.CompoundName }}"
+        />
+      </p>
+      <p>
+        <label>String Image Source</label>
+        <input type="text" value="{{ compound.strImageSource }}" id="source" />
+      </p>
+      <p>
+        <label>Compound Description</label>
+        <input
+          type="textarea"
+          value="{{ compound.CompoundDescription }}"
+          id="description"
+        />
+      </p>
+    </div>
+    <button class="button" (click)="updateData()">update</button>
+    <button class="cancel" (click)="update()">cancel</button>
+  </div>
+</div>

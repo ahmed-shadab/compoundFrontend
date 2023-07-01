@@ -1,0 +1,22 @@
+<div *ngIf="!loading" class="main">
+  <div
+    class="card"
+    *ngFor="let compound of compounds"
+    (click)="execute(compound)"
+  >
+    <div class="img-container">
+      <input type="hidden" value="{{ compound.id }}" />
+      <img
+        src="{{ compound.strImageSource }}"
+        alt="Compound Image"
+        style="width: 200px; height: 200px"
+      />
+    </div>
+    <div class="container">
+      <h4>
+        <b>{{ compound.CompoundName }}</b>
+      </h4>
+      <!-- <p class="description">{{ compound.CompoundDescription }}</p> -->
+    </div>
+  </div>
+</div>
