@@ -34,7 +34,7 @@ export class CompoundViewIdComponent implements OnInit, DoCheck {
     let id = Number(this.compound.id);
     let source = (<HTMLInputElement>document.getElementById('source')).value;
     this.http
-      .patch('http://localhost:3000/compound/', {
+      .patch('https://compound-backend.onrender.com/compound', {
         id: id,
         CompoundName: name,
         CompoundDescription: description,

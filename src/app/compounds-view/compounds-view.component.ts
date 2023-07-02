@@ -13,10 +13,16 @@ export class CompoundsViewComponent implements OnInit {
   constructor(private http: HttpClient, private route: Router) {}
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/compound').subscribe((value: any) => {
-      this.loading = false;
-      this.compounds = value;
-    });
+    // this.http.get('http://localhost:3000/compound').subscribe((value: any) => {
+    //   this.loading = false;
+    //   this.compounds = value;
+    // });
+    this.http
+      .get('https://compound-backend.onrender.com/compound')
+      .subscribe((value: any) => {
+        this.loading = false;
+        this.compounds = value;
+      });
   }
   execute(compound: any) {
     this.route.navigate([`/compound/${compound.id}`], {
